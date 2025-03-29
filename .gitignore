@@ -44,6 +44,36 @@ app.*.map.json
 /android/app/release
 
 # iOS related
+# Track only important iOS files and ignore generated files/build artifacts
+# First, ignore almost everything in the iOS folder
+**/ios/*
+
+# Then, specifically track these critical files
+!**/ios/Runner/
+!**/ios/Runner/Base.lproj/
+!**/ios/Runner/Base.lproj/LaunchScreen.storyboard
+!**/ios/Runner/Base.lproj/Main.storyboard
+!**/ios/Runner/Info.plist
+!**/ios/Runner/AppDelegate.swift
+!**/ios/Runner/Runner-Bridging-Header.h
+!**/ios/Runner/Assets.xcassets/
+!**/ios/Runner/Assets.xcassets/AppIcon.appiconset/
+!**/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+!**/ios/Runner/Assets.xcassets/LaunchImage.imageset/
+!**/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+
+# Track the core Xcode project files
+!**/ios/Flutter/
+!**/ios/Flutter/AppFrameworkInfo.plist
+!**/ios/Flutter/Debug.xcconfig
+!**/ios/Flutter/Release.xcconfig
+!**/ios/Podfile
+!**/ios/Runner.xcodeproj/
+!**/ios/Runner.xcodeproj/project.pbxproj
+!**/ios/Runner.xcworkspace/
+!**/ios/Runner.xcworkspace/contents.xcworkspacedata
+
+# Still exclude these generated files
 **/ios/**/*.mode1v3
 **/ios/**/*.mode2v3
 **/ios/**/*.moved-aside
