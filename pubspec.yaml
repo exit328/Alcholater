@@ -12,19 +12,32 @@ dependencies:
   cupertino_icons: ^1.0.5
   provider: ^6.0.5
   shared_preferences: ^2.2.1
+  intl: ^0.18.1
+  flutter_slidable: ^3.0.0
+  graphql_flutter: ^5.2.0
+  decimal: ^2.3.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.2
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
-  # assets:
-  #   - images/
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  assets:
+    - assets/icon/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+  windows:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    icon_size: 48
