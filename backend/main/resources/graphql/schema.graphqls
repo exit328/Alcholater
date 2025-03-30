@@ -1,0 +1,101 @@
+"""
+Alcohol product for value calculation
+"""
+type AlcoholProduct {
+    """
+    MongoDB ID of the product
+    """
+    id: ID!
+    
+    """
+    Name of the product
+    """
+    name: String!
+    
+    """
+    Price in USD
+    """
+    price: String!
+    
+    """
+    Volume in milliliters
+    """
+    volume: String!
+    
+    """
+    Alcohol percentage as a decimal (e.g., 0.40 for 40%)
+    """
+    alcoholPercentage: String!
+    
+    """
+    User ID to associate products with a user
+    """
+    userId: String
+    
+    """
+    Value ratio (ml of pure alcohol per dollar)
+    """
+    valueRatio: String!
+    
+    """
+    Price per liter
+    """
+    pricePerLiter: String!
+    
+    """
+    Number of standard drinks
+    """
+    standardDrinks: String!
+    
+    """
+    Price per standard drink
+    """
+    pricePerStandardDrink: String!
+}
+
+"""
+Input for creating/updating an alcohol product
+"""
+input ProductInput {
+    name: String!
+    price: String!
+    volume: String!
+    alcoholPercentage: String!
+    userId: String
+}
+
+"""
+Filter criteria for product queries
+"""
+input ProductFilter {
+    userId: String
+}
+
+type Query {
+    """
+    Get all products, optionally filtered by user
+    """
+    products(where: ProductFilter): [AlcoholProduct!]!
+    
+    """
+    Get a single product by ID
+    """
+    product(id: ID!): AlcoholProduct
+}
+
+type Mutation {
+    """
+    Create a new product
+    """
+    createProduct(input: ProductInput!): AlcoholProduct!
+    
+    """
+    Update an existing product
+    """
+    updateProduct(id: ID!, input: ProductInput!): AlcoholProduct!
+    
+    """
+    Delete a product
+    """
+    deleteProduct(id: ID!): Boolean!
+}

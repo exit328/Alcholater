@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: alcholater-backend
+  data:
+    mongodb:
+      # Change these settings to match your MongoDB deployment
+      uri: mongodb://localhost:27017/alcholater
+      auto-index-creation: true
+  graphql:
+    graphiql:
+      enabled: true # Enable GraphiQL web interface for testing
+    schema:
+      printer:
+        enabled: true # Enable schema printing for debugging
+
+server:
+  port: 8080
+  
+logging:
+  level:
+    org.springframework.data.mongodb: INFO
+    org.springframework.graphql: INFO
